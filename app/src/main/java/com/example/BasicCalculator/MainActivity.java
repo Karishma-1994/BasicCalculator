@@ -1,10 +1,10 @@
-package com.example.addition;
+package com.example.BasicCalculator;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
-import android.view.ViewTreeObserver;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
@@ -19,7 +19,9 @@ public class MainActivity extends AppCompatActivity {
     private Button btnMultiply;
     private Button btnDivide;
     private TextView tvResult;
+    private Button clearButton;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +35,16 @@ public class MainActivity extends AppCompatActivity {
         btnMultiply = findViewById(R.id.btnMultiply);
         btnDivide = findViewById(R.id.btnDivide);
         tvResult = findViewById(R.id.tvResult);
+        clearButton =findViewById(R.id.clearButton);
+
+        clearButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                edtNumber1.setText("");
+                edtNumber2.setText("");
+                tvResult.setText("");
+            }
+        });
 
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override

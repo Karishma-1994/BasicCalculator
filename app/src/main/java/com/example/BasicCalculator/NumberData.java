@@ -1,4 +1,4 @@
-package com.example.addition;
+package com.example.BasicCalculator;
 
 public final class NumberData {
     private final Double number1;
